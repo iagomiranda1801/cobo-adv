@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowUpRightIcon } from "@heroicons/react/24/outline";
+import { whatsappUrl } from "@/lib/contact";
 
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -11,7 +12,7 @@ export function ContactForm() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const text = `Olá, meu nome é ${name}. Telefone: ${phone}.\n\n${message}`;
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
+    window.open(whatsappUrl(text), "_blank", "noopener,noreferrer");
   }
 
   return (

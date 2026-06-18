@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Logo } from "./logo";
+import { whatsappUrl } from "@/lib/contact";
 
 const links = [
   ["Início", "#inicio"],
@@ -12,7 +13,9 @@ const links = [
   ["Contato", "#contato"],
 ];
 
-const whatsappHref = "https://wa.me/?text=Olá%2C%20gostaria%20de%20agendar%20um%20atendimento%20com%20a%20COBO%20Advocacia.";
+const whatsappHref = whatsappUrl(
+  "Olá, gostaria de agendar um atendimento com a COBO Advocacia.",
+);
 
 export function Header() {
   const [open, setOpen] = useState(false);
