@@ -16,6 +16,7 @@ import {
   SparklesIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { Logo } from "@/components/logo";
 import { ContactForm } from "@/components/contact-form";
@@ -189,10 +190,25 @@ export default function Home() {
         </section>
 
         <section className="bg-white py-24 sm:py-32">
-          <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[.75fr_1.25fr] lg:px-8">
-            <div><Eyebrow>Localização</Eyebrow><h2 className="font-display text-4xl tracking-tight sm:text-6xl">Em Uberaba,<br /><span className="italic text-gold-600">perto de você.</span></h2><p className="mt-7 max-w-md leading-8 text-black/55">Atendimento jurídico para Uberaba/MG e região, com proximidade e praticidade.</p><address className="mt-6 not-italic text-sm leading-7 text-black/60">{STREET_ADDRESS}<br />{DISTRICT_ADDRESS}</address></div>
-            <div className="map-pattern relative grid min-h-80 place-items-center overflow-hidden bg-ink p-8 text-center text-white">
-              <div className="relative z-10"><div className="mx-auto grid h-16 w-16 place-items-center rounded-full border border-gold-300/50 bg-ink"><MapPinIcon className="h-7 w-7 text-gold-300" /></div><p className="mt-6 font-display text-3xl">{STREET_ADDRESS}</p><p className="mt-3 text-xs uppercase tracking-[0.2em] text-white/45">{DISTRICT_ADDRESS}</p><a href={MAPS_URL} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 border-b border-gold-300 pb-1 text-xs font-bold uppercase tracking-[0.14em] text-gold-300 transition hover:text-white">Ver rota no Google Maps <ArrowRightIcon className="h-4 w-4" /></a></div>
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <div className="grid gap-12 lg:grid-cols-[.75fr_1.25fr]">
+              <div><Eyebrow>Localização</Eyebrow><h2 className="font-display text-4xl tracking-tight sm:text-6xl">Em Uberaba,<br /><span className="italic text-gold-600">perto de você.</span></h2><p className="mt-7 max-w-md leading-8 text-black/55">Atendimento jurídico para Uberaba/MG e região, com proximidade e praticidade.</p><address className="mt-6 not-italic text-sm leading-7 text-black/60">{STREET_ADDRESS}<br />{DISTRICT_ADDRESS}</address></div>
+              <div className="map-pattern relative grid min-h-80 place-items-center overflow-hidden bg-ink p-8 text-center text-white">
+                <div className="relative z-10"><div className="mx-auto grid h-16 w-16 place-items-center rounded-full border border-gold-300/50 bg-ink"><MapPinIcon className="h-7 w-7 text-gold-300" /></div><p className="mt-6 font-display text-3xl">{STREET_ADDRESS}</p><p className="mt-3 text-xs uppercase tracking-[0.2em] text-white/45">{DISTRICT_ADDRESS}</p><a href={MAPS_URL} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 border-b border-gold-300 pb-1 text-xs font-bold uppercase tracking-[0.14em] text-gold-300 transition hover:text-white">Ver rota no Google Maps <ArrowRightIcon className="h-4 w-4" /></a></div>
+              </div>
+            </div>
+
+            <div className="mt-14 grid gap-4 md:h-[680px] md:grid-cols-[.82fr_1.18fr] md:grid-rows-2">
+              <figure className="group relative min-h-[520px] overflow-hidden bg-ink md:row-span-2 md:min-h-0">
+                <Image src="/images/fachada-cobo-vertical.png" alt="Fachada do edifício onde está localizada a COBO Advocacia em Uberaba" fill sizes="(min-width: 768px) 42vw, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.025]" />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-6 pb-6 pt-20 text-white"><p className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-gold-300">Nosso endereço</p><figcaption className="mt-2 font-display text-2xl">Um espaço preparado para receber você.</figcaption></div>
+              </figure>
+              <figure className="group relative min-h-72 overflow-hidden bg-ink md:min-h-0">
+                <Image src="/images/entrada-cobo.png" alt="Entrada do Edifício Afonso e Alice Dorea, número 71, com identificação da COBO Advocacia" fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.025]" />
+              </figure>
+              <figure className="group relative min-h-72 overflow-hidden bg-ink md:min-h-0">
+                <Image src="/images/fachada-cobo.png" alt="Fachada e acesso ao edifício da COBO Advocacia na Rua Episcopal, número 71" fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover transition duration-700 group-hover:scale-[1.025]" />
+              </figure>
             </div>
           </div>
         </section>
