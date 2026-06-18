@@ -19,7 +19,13 @@ import {
 import { Header } from "@/components/header";
 import { Logo } from "@/components/logo";
 import { ContactForm } from "@/components/contact-form";
-import { DISPLAY_PHONE, whatsappUrl } from "@/lib/contact";
+import {
+  DISPLAY_PHONE,
+  DISTRICT_ADDRESS,
+  MAPS_URL,
+  STREET_ADDRESS,
+  whatsappUrl,
+} from "@/lib/contact";
 
 const whatsappHref = whatsappUrl(
   "Olá, gostaria de uma orientação jurídica com a COBO Advocacia.",
@@ -54,7 +60,13 @@ const schema = {
   description: "Advocacia & Consultoria Jurídica em Uberaba/MG.",
   telephone: DISPLAY_PHONE,
   areaServed: { "@type": "City", name: "Uberaba" },
-  address: { "@type": "PostalAddress", addressLocality: "Uberaba", addressRegion: "MG", addressCountry: "BR" },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Rua Episcopal, nº 71, sala 302",
+    addressLocality: "Uberaba",
+    addressRegion: "MG",
+    addressCountry: "BR",
+  },
   serviceType: ["Direito Civil", "Direito Trabalhista", "Direito Previdenciário", "Direito do Consumidor", "Direito Empresarial", "Consultoria Jurídica"],
 };
 
@@ -178,10 +190,9 @@ export default function Home() {
 
         <section className="bg-white py-24 sm:py-32">
           <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[.75fr_1.25fr] lg:px-8">
-            <div><Eyebrow>Localização</Eyebrow><h2 className="font-display text-4xl tracking-tight sm:text-6xl">Em Uberaba,<br /><span className="italic text-gold-600">perto de você.</span></h2><p className="mt-7 max-w-md leading-8 text-black/55">Atendimento jurídico para Uberaba/MG e região, com proximidade e praticidade.</p></div>
+            <div><Eyebrow>Localização</Eyebrow><h2 className="font-display text-4xl tracking-tight sm:text-6xl">Em Uberaba,<br /><span className="italic text-gold-600">perto de você.</span></h2><p className="mt-7 max-w-md leading-8 text-black/55">Atendimento jurídico para Uberaba/MG e região, com proximidade e praticidade.</p><address className="mt-6 not-italic text-sm leading-7 text-black/60">{STREET_ADDRESS}<br />{DISTRICT_ADDRESS}</address></div>
             <div className="map-pattern relative grid min-h-80 place-items-center overflow-hidden bg-ink p-8 text-center text-white">
-              <div className="relative z-10"><div className="mx-auto grid h-16 w-16 place-items-center rounded-full border border-gold-300/50 bg-ink"><MapPinIcon className="h-7 w-7 text-gold-300" /></div><p className="mt-6 font-display text-3xl">Uberaba / Minas Gerais</p><p className="mt-3 text-xs uppercase tracking-[0.2em] text-white/45">COBO Advocacia</p></div>
-              <span className="absolute bottom-5 right-6 text-[0.6rem] uppercase tracking-widest text-white/25">Mapa em breve</span>
+              <div className="relative z-10"><div className="mx-auto grid h-16 w-16 place-items-center rounded-full border border-gold-300/50 bg-ink"><MapPinIcon className="h-7 w-7 text-gold-300" /></div><p className="mt-6 font-display text-3xl">{STREET_ADDRESS}</p><p className="mt-3 text-xs uppercase tracking-[0.2em] text-white/45">{DISTRICT_ADDRESS}</p><a href={MAPS_URL} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 border-b border-gold-300 pb-1 text-xs font-bold uppercase tracking-[0.14em] text-gold-300 transition hover:text-white">Ver rota no Google Maps <ArrowRightIcon className="h-4 w-4" /></a></div>
             </div>
           </div>
         </section>
@@ -192,7 +203,7 @@ export default function Home() {
               <Eyebrow>Entre em contato</Eyebrow>
               <h2 className="font-display text-4xl tracking-tight sm:text-6xl">Vamos conversar sobre seu caso.</h2>
               <p className="mt-7 max-w-md leading-8 text-black/55">Envie uma mensagem e dê o primeiro passo para compreender seus direitos com clareza.</p>
-              <div className="mt-10 border-l border-gold-500 pl-6"><p className="font-display text-xl">COBO Advocacia</p><p className="mt-2 text-sm leading-6 text-black/50">Advocacia & Consultoria Jurídica<br />Uberaba/MG<br />{DISPLAY_PHONE}</p></div>
+              <div className="mt-10 border-l border-gold-500 pl-6"><p className="font-display text-xl">COBO Advocacia</p><address className="mt-2 not-italic text-sm leading-6 text-black/50">Advocacia & Consultoria Jurídica<br />{STREET_ADDRESS}<br />{DISTRICT_ADDRESS}<br />{DISPLAY_PHONE}</address></div>
             </div>
             <ContactForm />
           </div>
@@ -203,7 +214,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-14 md:grid-cols-[1fr_auto_auto] lg:px-8">
           <div><Logo light /><p className="mt-6 max-w-sm text-sm leading-7 text-white/45">Atuação jurídica ética, estratégica e humanizada para proteger direitos e construir caminhos seguros.</p></div>
           <div><p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-gold-300">Navegação</p><div className="mt-5 grid gap-3 text-sm text-white/55"><a href="#sobre" className="hover:text-white">Sobre</a><a href="#areas" className="hover:text-white">Áreas de atuação</a><a href="#diferenciais" className="hover:text-white">Diferenciais</a><a href="#contato" className="hover:text-white">Contato</a></div></div>
-          <div><p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-gold-300">Atendimento</p><p className="mt-5 text-sm leading-7 text-white/55">Uberaba/MG<br />e região<br /><a href={whatsappHref} target="_blank" rel="noreferrer" className="transition hover:text-white">{DISPLAY_PHONE}</a></p></div>
+          <div><p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-gold-300">Atendimento</p><address className="mt-5 not-italic text-sm leading-7 text-white/55">{STREET_ADDRESS}<br />{DISTRICT_ADDRESS}<br /><a href={whatsappHref} target="_blank" rel="noreferrer" className="transition hover:text-white">{DISPLAY_PHONE}</a></address></div>
         </div>
         <div className="mx-auto flex max-w-7xl flex-col gap-3 border-t border-white/10 px-5 pt-7 text-[0.65rem] uppercase tracking-[0.12em] text-white/30 sm:flex-row sm:justify-between lg:px-8"><p>© {new Date().getFullYear()} COBO Advocacia. Todos os direitos reservados.</p><p>Ética · Compromisso · Resultados</p></div>
       </footer>
