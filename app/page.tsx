@@ -57,9 +57,22 @@ const trust = [
 const schema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
+  "@id": "https://coboadvocacia.com.br/#legal-service",
   name: "COBO Advocacia",
   description: "Advocacia & Consultoria Jurídica em Uberaba/MG.",
+  url: "https://coboadvocacia.com.br",
+  image: [
+    "https://coboadvocacia.com.br/images/fachada-cobo.png",
+    "https://coboadvocacia.com.br/images/entrada-cobo.png",
+  ],
   telephone: DISPLAY_PHONE,
+  hasMap: MAPS_URL,
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: DISPLAY_PHONE,
+    contactType: "Atendimento jurídico",
+    availableLanguage: "Portuguese",
+  },
   areaServed: { "@type": "City", name: "Uberaba" },
   address: {
     "@type": "PostalAddress",
