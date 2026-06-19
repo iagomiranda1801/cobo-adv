@@ -112,15 +112,10 @@ export default function Home() {
                 <a href="#areas" className="inline-flex items-center justify-center border border-white/20 px-7 py-4 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:border-gold-300 hover:text-gold-300">Conhecer áreas de atuação</a>
               </div>
             </div>
-            <div className="relative hidden min-h-[440px] items-center justify-center lg:flex" aria-hidden="true">
+            <div className="relative hidden min-h-[440px] items-center justify-center lg:flex">
               <div className="absolute h-80 w-80 rounded-full border border-gold-300/30" />
               <div className="absolute h-64 w-64 rounded-full border border-gold-300/15" />
-              <div className="relative text-center">
-                <div className="font-display text-8xl text-gold-300/90">C<span className="-ml-7 text-7xl italic">A</span></div>
-                <div className="mx-auto my-5 flex w-48 items-center gap-3"><span className="h-px flex-1 bg-gold-400/60" /><span className="h-2 w-2 rotate-45 bg-gold-400" /><span className="h-px flex-1 bg-gold-400/60" /></div>
-                <p className="font-display text-4xl tracking-[0.25em] text-white">COBO</p>
-                <p className="mt-3 text-[0.6rem] tracking-[0.45em] text-gold-300">ADVOCACIA</p>
-              </div>
+              <Image src="/images/logo-cobo-oficial.jpeg" alt="Logo oficial da COBO Advocacia e Consultoria Jurídica" width={1024} height={1024} priority className="relative z-10 h-[420px] w-[420px] object-contain mix-blend-screen" />
             </div>
           </div>
           <a href="#sobre" aria-label="Ir para a próxima seção" className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-white/40 transition hover:text-gold-300 lg:block"><ArrowDownIcon className="h-5 w-5 animate-bounce" /></a>
