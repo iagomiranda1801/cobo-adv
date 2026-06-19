@@ -3,7 +3,6 @@ import {
   ArrowRightIcon,
   BanknotesIcon,
   BriefcaseIcon,
-  BuildingOffice2Icon,
   ChatBubbleLeftRightIcon,
   CheckIcon,
   DocumentCheckIcon,
@@ -37,7 +36,7 @@ const areas = [
   { icon: BriefcaseIcon, title: "Direito Trabalhista", text: "Orientação e representação jurídica para trabalhadores e empresas em relações de trabalho." },
   { icon: BanknotesIcon, title: "Direito Previdenciário", text: "Análise cuidadosa de benefícios, aposentadorias, revisões e planejamento previdenciário." },
   { icon: HandRaisedIcon, title: "Direito do Consumidor", text: "Defesa dos seus direitos em relações de consumo, cobranças e falhas na prestação de serviços." },
-  { icon: BuildingOffice2Icon, title: "Direito Empresarial", text: "Suporte jurídico preventivo para decisões, contratos e rotinas da sua empresa." },
+  { icon: ShieldCheckIcon, title: "Direito Penal", text: "Defesa técnica e acompanhamento jurídico cuidadoso em investigações e processos penais." },
   { icon: DocumentCheckIcon, title: "Consultoria Jurídica", text: "Pareceres e orientação personalizada para prevenir riscos e trazer segurança às suas escolhas." },
 ];
 
@@ -81,7 +80,7 @@ const schema = {
     addressRegion: "MG",
     addressCountry: "BR",
   },
-  serviceType: ["Direito Civil", "Direito Trabalhista", "Direito Previdenciário", "Direito do Consumidor", "Direito Empresarial", "Consultoria Jurídica"],
+  serviceType: ["Direito Civil", "Direito Penal", "Direito Trabalhista", "Direito Previdenciário", "Direito do Consumidor", "Consultoria Jurídica"],
 };
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {

@@ -4,7 +4,7 @@ import "./globals.css";
 
 const title = "COBO Advocacia | Advogado em Uberaba/MG";
 const description =
-  "COBO Advocacia em Uberaba/MG. Atendimento jurídico profissional, ético e estratégico em Direito Civil, Trabalhista, Previdenciário, Consumidor e Empresarial.";
+  "COBO Advocacia em Uberaba/MG. Atendimento jurídico profissional, ético e estratégico em Direito Civil, Penal, Trabalhista, Previdenciário e do Consumidor.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://coboadvocacia.com.br"),
@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     "advocacia Uberaba",
     "escritório de advocacia Uberaba",
     "advogado civil Uberaba",
+    "advogado penal Uberaba",
+    "advogado criminalista Uberaba",
     "advogado trabalhista Uberaba",
     "consultoria jurídica Uberaba",
   ],
